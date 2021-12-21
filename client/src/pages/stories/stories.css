@@ -1,0 +1,53 @@
+.story-container-section {
+	position: relative;
+	z-index: 1;
+}
+
+.home-link {
+	margin: 10px 0px;
+	padding: 0px 5px;
+	color: black;
+	display: flex;
+}
+.home-link > p {
+	font-size: 25px;
+	font-weight: bold;
+	margin-left: 10px;
+}
+.home-link > i {
+	padding: 10px;
+	color: white;
+	background-color: black;
+	font-size: 12px;
+	border-radius: 50%;
+	font-weight: bold;
+}
+.story-telling {
+	background-color: #4285f4;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	margin: 0 auto;
+	width: 60%;
+	font-size: 25px;
+	text-align: center;
+}
+.story-image {
+	margin: 10px 0px;
+	height: 85vh;
+	background-image: linear-gradient(
+		to right,
+		rgba(75, 75, 75, 0.4),
+		rgba(75, 75, 75, 0.4)
+	);
+	filter: blur(2px);
+}
+.centered {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 50%;
+	left: 20%;
+	z-index: 2;
+}

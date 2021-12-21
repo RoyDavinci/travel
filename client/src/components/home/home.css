@@ -1,0 +1,136 @@
+main {
+	background-image: linear-gradient(
+			to right,
+			rgba(75, 75, 75, 0.4),
+			rgba(75, 75, 75, 0.4)
+		),
+		url("../../design/midnight-sun-g58aa07975_1280.jpg");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding: 30px;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100vw;
+}
+.main__wrapper {
+	background-color: black;
+	padding: 10px;
+	border-radius: 10px;
+	font-size: 15px;
+}
+.explore {
+	background-image: linear-gradient(
+			to right,
+			rgba(75, 75, 75, 0.4),
+			rgba(75, 75, 75, 0.4)
+		),
+		url("../../design/woman-865021_960_720.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	border-top-left-radius: 10px;
+}
+a {
+	color: white;
+}
+.division a p {
+	font-size: 18px;
+}
+.about {
+	background-image: linear-gradient(
+			to right,
+			rgba(75, 75, 75, 0.4),
+			rgba(75, 75, 75, 0.4)
+		),
+		url("../../design/boys-3396713_960_720.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	border-bottom-left-radius: 10px;
+}
+.help {
+	background-image: linear-gradient(
+			to right,
+			rgba(75, 75, 75, 0.4),
+			rgba(75, 75, 75, 0.4)
+		),
+		url("../../design/sunset-1807524_960_720.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	border-bottom-right-radius: 10px;
+}
+.stories {
+	background-image: linear-gradient(
+			to right,
+			rgba(75, 75, 75, 0.4),
+			rgba(75, 75, 75, 0.4)
+		),
+		url("../../design/love-3187623_960_720.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	border-top-right-radius: 10px;
+}
+.section-first {
+	padding: 10px;
+}
+.section-first > article {
+	margin: 20px 0px;
+}
+.section-first > article > button {
+	padding: 20px;
+	margin: 20px 0px;
+	border: 1px solid #ccc;
+	color: white;
+	border-radius: 5px;
+	font-size: 90%;
+	background-color: #343a40;
+}
+
+@media screen and (min-width: 767px) {
+	.main__wrapper {
+		display: flex;
+		justify-content: space-around;
+		width: 70%;
+	}
+	.section-second {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		font-size: 60%;
+	}
+	.section-first article {
+		padding: 20px;
+	}
+}
+.section-second {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	font-size: 60%;
+}
+@media screen and (max-width: 766px) {
+	.section-second {
+		font-size: 70%;
+	}
+	main {
+		height: 100%;
+		width: 100%;
+		padding: 15px;
+	}
+	.section-second > div {
+		padding: 15px;
+	}
+	.section-first {
+		padding: 0px;
+	}
+	.main__wrapper {
+		width: 100%;
+	}
+}
+.section-second > div {
+	padding: 10px;
+}

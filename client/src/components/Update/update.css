@@ -1,0 +1,66 @@
+img {
+	width: 100%;
+}
+
+.form-horizontal {
+	justify-content: center;
+	place-items: center;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+}
+
+.form-horizontal > input {
+	border: 1px solid #ccc;
+	padding: 10px;
+	margin: 10px 0px;
+	font-size: 20px;
+	font-style: italic;
+}
+.form-horizontal input {
+	display: block;
+	width: 80%;
+}
+.form-horizontal textarea {
+	padding: 10px;
+	height: 200px;
+	margin: 20px auto;
+	border: 1px solid rgb(129, 129, 129);
+	width: 90%;
+	font-size: 20px;
+}
+.form-horizontal label {
+	font-size: 25px;
+	font-weight: bold;
+	margin: 10px 0px;
+	display: block;
+}
+.form-horizontal button {
+	border: 1px solid #ccc;
+	padding: 10px;
+	font-size: 25px;
+	color: white;
+	background-color: rgb(58, 180, 119);
+	width: 80%;
+	border-radius: 10px;
+	margin: 10px 0px;
+}
+@media screen and (min-width: 767px) {
+	.form-horizontal {
+		background-image: linear-gradient(
+				to right,
+				rgba(75, 75, 75, 0.4),
+				rgba(75, 75, 75, 0.4)
+			),
+			url("../../design//midnight-sun-g58aa07975_1280.jpg");
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		color: white;
+	}
+	.form-horizontal input,
+	.form-horizontal textarea,
+	.form-horizontal button {
+		width: 60%;
+	}
+}

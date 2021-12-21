@@ -1,0 +1,38 @@
+.story {
+	margin: 30px 0px;
+}
+.story .hero-img {
+	margin: 15px 0px;
+	width: 100%;
+}
+.section-center {
+	padding: 10px;
+}
+.user {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+}
+.details {
+	display: flex;
+	align-items: center;
+}
+.details img {
+	margin-right: 15px;
+}
+.detail span {
+	margin: 0px 5px;
+}
+.message {
+	margin: 15px 0px;
+}
+.message p {
+	font-size: 23px;
+}
+.message a {
+	display: inline-flex;
+	color: rgb(67, 67, 212);
+	align-items: center;
+	margin: 0px 10px;
+	font-size: 16px;
+}

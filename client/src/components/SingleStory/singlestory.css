@@ -1,0 +1,39 @@
+.single-story img {
+	margin: 15px 0px;
+}
+.writer .user {
+	margin: 0px 10px;
+	border-radius: 50%;
+}
+.writer {
+	display: flex;
+	align-items: center;
+}
+.writer span {
+	margin: 0px 10px;
+}
+.read-more {
+	margin: 10px 0px;
+}
+.button-container {
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.button-container a,
+.button-container button {
+	font-size: 25px;
+	margin: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	color: white;
+}
+.button-container a {
+	background-color: #4285f4;
+	padding: 8px;
+}
+.button-container button {
+	background-color: #db4437;
+	padding: 10px;
+}
