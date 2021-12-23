@@ -2,6 +2,7 @@ import "./create.css";
 import BackgroundImage from "../../design/camera-1130731_960_720.webp";
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const initialState = {
 	first_name: "",
@@ -13,6 +14,7 @@ const initialState = {
 };
 
 const Create = () => {
+	let navigate = useNavigate();
 	const [input, setInput] = useState(initialState);
 
 	const handleInput = (event) => {
@@ -32,9 +34,11 @@ const Create = () => {
 			story: input.story,
 			first_name: input.first_name,
 			last_name: input.last_name,
+			title: input.title,
 		});
 		setInput(initialState);
 		console.log(data);
+		navigate("/");
 	};
 
 	return (

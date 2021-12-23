@@ -3,21 +3,22 @@ import BackgroundImage from "../../design/camera-1130731_960_720.webp";
 import { useState } from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
-const initialState = {
-	first_name: "",
-	last_name: "",
-	location: "",
-	cost: "",
-	story: "",
-	title: "",
-};
+// const initialState = {
+// 	first_name: "",
+// 	last_name: "",
+// 	location: "",
+// 	cost: "",
+// 	story: "",
+// 	title: "",
+// };
 
 const Update = () => {
 	let { id } = useParams();
 	let navigate = useNavigate();
-	const [input, setInput] = useState(initialState);
+	const [input, setInput] = useState({});
+	const isMounted = useRef(true);
 
 	const handleInput = (event) => {
 		const { name, value } = event.target;
@@ -41,12 +42,13 @@ const Update = () => {
 				title: input.title,
 			}
 		);
-		setInput(initialState);
+		setInput({});
 		navigate("/stories");
 		console.log(data);
 	};
 
 	useEffect(() => {
+			if (isMounted.current) {
 		const getStory = async () => {
 			const { data } = await axios.get(
 				`http://localhost:4300/api/v1/story/${id}`
@@ -61,6 +63,10 @@ const Update = () => {
 			});
 		};
 		getStory();
+		return () => {
+			isMounted.current = false;
+		};
+	}
 	}, [id, input]);
 
 	return (
@@ -76,28 +82,28 @@ const Update = () => {
 				<input
 					type='text'
 					name='title'
-					value={input.title}
+					value={input?.title}
 					placeholder='Title'
 					onChange={handleInput}
 				/>
 				<input
 					type='text'
 					name='first_name'
-					value={input.first_name}
+					value={input?.first_name}
 					placeholder='First Name'
 					onChange={handleInput}
 				/>
 				<input
 					type='text'
 					name='last_name'
-					value={input.last_name}
+					value={input?.last_name}
 					placeholder='Last Name'
 					onChange={handleInput}
 				/>
 				<input
 					type='text'
 					name='location'
-					value={input.location}
+					value={input?.location}
 					placeholder='Location'
 					onChange={handleInput}
 				/>
@@ -105,7 +111,7 @@ const Update = () => {
 				<input
 					type='text'
 					name='cost'
-					value={input.cost}
+					value={input?.cost}
 					placeholder='Cost of Travel'
 					onChange={handleInput}
 				/>
@@ -113,7 +119,7 @@ const Update = () => {
 				<textarea
 					name='story'
 					id='story'
-					value={input.story}
+					value={input?.story}
 					onChange={handleInput}
 				></textarea>
 				<button>Update</button>

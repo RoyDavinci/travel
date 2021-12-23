@@ -24,7 +24,7 @@ const Home = () => {
 				</section>
 				<section className='section-second'>
 					<div className='explore division'>
-						<Link to='/'>
+						<Link to='/explore'>
 							<h1>Explore</h1>
 							<p>
 								Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui

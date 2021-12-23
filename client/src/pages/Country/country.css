@@ -1,0 +1,54 @@
+.country__container {
+	background-color: hsl(207, 26%, 17%);
+	color: hsl(0, 0%, 100%);
+}
+.country__itemContainer,
+.country__container header {
+	padding: 20px;
+}
+.country__container header {
+	display: flex;
+	justify-content: space-between;
+	background-color: hsl(209, 23%, 22%);
+}
+.search__formContainer {
+	padding: 10px;
+	margin: 15px 0px;
+	background-color: hsl(209, 23%, 22%);
+}
+.search__formContainer i {
+	font-size: 20px;
+	margin: 0px 10px;
+}
+.search__formContainer input {
+	font-size: 20px;
+	background-color: hsl(209, 23%, 22%);
+	color: hsl(0, 0%, 100%);
+	padding: 10px;
+}
+.search__formContainer button {
+	display: none;
+}
+.country__detailContainer > a {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	grid-gap: 10px;
+}
+
+.country__detailContainer .detailContainer {
+	background-color: hsl(209, 23%, 22%);
+	margin-bottom: 40px;
+}
+.country__detailContainer .details {
+	line-height: 1.5rem;
+	display: block;
+	padding: 10px 10px;
+}
+.details > p {
+	display: block;
+	margin: 10px 0px;
+	font-weight: bold;
+}
+.details > p > span {
+	font-weight: normal;
+}

@@ -1,0 +1,36 @@
+.countryDetail__container {
+	background-color: hsl(207, 26%, 17%);
+	color: white;
+}
+.countryDetail__container header {
+	background-color: hsl(209, 23%, 22%);
+	padding: 20px;
+	display: flex;
+	justify-content: space-between;
+}
+.singleCountry__container {
+	padding: 20px;
+}
+.singleCountry__container > a {
+	padding: 10px;
+	background-color: hsl(209, 23%, 22%);
+	font-size: 20px;
+	margin: 20px 0px;
+	display: inline-block;
+}
+.singleCountry__container > a > i {
+	margin-left: 10px;
+	margin-right: 20px;
+}
+.singleCountry__detailContainer .singleCountry__detailed,
+.singleCountry__detailContainer .singleCountry__detailedTwo {
+	line-height: 2.5rem;
+}
+.singleCountry__borders span {
+	padding: 10px;
+	align-items: center;
+	background-color: hsl(209, 23%, 22%);
+}
+.language__element {
+	margin: 0px 5px;
+}

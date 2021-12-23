@@ -1,5 +1,5 @@
 import "./stories.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import Story from "../../components/story/Story";
 import StoryImage from "../../design/pexels-roman-odintsov-4553618.jpg";
@@ -7,17 +7,23 @@ import axios from "axios";
 
 const Stories = () => {
 	const [stories, setStories] = useState([]);
+	const isMounted = useRef(true);
 
 	const initialComponent = () => {
 		return <img className='story-image' src={StoryImage} alt='' />;
 	};
 
 	useEffect(() => {
-		const getStories = async () => {
-			const { data } = await axios.get("http://localhost:4300/api/v1/story");
-			setStories(data.rows);
-		};
-		getStories();
+		if (isMounted.current) {
+			const getStories = async () => {
+				const { data } = await axios.get("http://localhost:4300/api/v1/story");
+				setStories(data.rows);
+			};
+			getStories();
+			return () => {
+				isMounted.current = false;
+			};
+		}
 	}, []);
 	return (
 		<section className='story-container-section'>
