@@ -6,6 +6,8 @@ import Update from "./components/Update/Update";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Country from "./pages/Country/Country";
 import CountryDetail from "./pages/CountryDetail/CountryDetail";
+import Login from "./pages/Login/Login";
+import SignUp from "./pages/Signup/Signup";
 
 function App() {
 	return (
@@ -19,6 +21,8 @@ function App() {
 					<Route exact path='/update/:id' element={<Update />} />
 					<Route exact path='/explore' element={<Country />} />
 					<Route exact path='/explore/:id' element={<CountryDetail />} />
+					<Route exact path='/login' element={<Login />} />
+					<Route exact path='/signup' element={<SignUp />} />
 				</Routes>
 			</Router>
 		</div>

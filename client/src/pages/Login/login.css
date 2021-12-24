@@ -1,0 +1,47 @@
+
+.formContainer{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center; 
+    height: 100vh;
+    background-color: hsl(200, 15%, 8%);
+}
+
+.loginForm{
+    width: 50%;
+    padding: 30px;
+    box-shadow: 0 10px 15px rgb(0, 0, 0, 0.4);
+    background-image: linear-gradient(to right bottom, hsl(210, 20%, 16%), hsl(0, 0%, 56%));
+} 
+
+.loginForm input[type=text], 
+.loginForm input[type=password],
+.submitBtn{
+    font-size: 20px;
+    background-color: hsl(0, 0%, 100%);
+    display: block;
+    padding: 12px 15px;
+}
+
+.loginForm input[type=text],
+.loginForm input[type=password] {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.loginForm .submitBtn{
+    width: 200px;
+    font-weight: 600;
+    margin-top: 30px;
+    border-radius: 20px;
+    color: hsl(200, 15%, 8%);
+}
+
+.loginForm .submitBtn:hover{
+    background-color: greenyellow;
+    background-color: hsl(0, 0%, 100%);
+}
+
+
+
