@@ -14,6 +14,7 @@ const CountryDetail = () => {
 				{ name: id }
 			);
 			setCountry(data);
+			console.log(data);
 		};
 		getCountryByName();
 	}, [id]);
@@ -38,53 +39,62 @@ const CountryDetail = () => {
 						flags,
 						subregion,
 						languages,
+						tld,
+						currencies,
+						borders,
 					} = state;
 
 					return (
 						<div className='singleCountry__detail' key={index}>
 							<img src={flags.svg} alt='' />
 							<div className='singleCountry__detailContainer'>
-								<div className='singleCountry__detailed'>
-									<h4>{common}</h4>
-									<p>
-										Population: <span>{population}</span>
-									</p>
-									<p>
-										Region: <span>{region}</span>
-									</p>
-									<p>
-										Sub Region: <span>{subregion}</span>
-									</p>
-									<p>
-										Capital: <span>{capital}</span>
-									</p>
-									<p>
-										Languages:{" "}
-										{Object.keys(languages).map(function (key, index) {
-											return (
-												<span className='language__element' key={index}>
-													{languages[key]}
-												</span>
-											);
-										})}
-									</p>
-								</div>
-								<div className='singleCountry__detailedTwo'>
-									<p>
-										TopLevelDomain: <span>.be</span>
-									</p>
-									<p>
-										Currencies: <span>Eur</span>
-									</p>
-									<p>
-										Languages: <span>Dutch, French, German</span>
-									</p>
+								<div className='singleDetail__parent'>
+									<div className='singleCountry__detailed'>
+										<h4>{common}</h4>
+										<p>
+											Population: <span>{population}</span>
+										</p>
+										<p>
+											Region: <span>{region}</span>
+										</p>
+										<p>
+											Sub Region: <span>{subregion}</span>
+										</p>
+										<p>
+											Capital: <span>{capital}</span>
+										</p>
+									</div>
+									<div className='singleCountry__detailedTwo'>
+										<p>
+											TopLevelDomain: <span>{tld[0]}</span>
+										</p>
+										<p>
+											Currencies:
+											{Object.keys(currencies).map(function (key, index) {
+												return (
+													<span className='language__element' key={index}>
+														{currencies[key].symbol}
+													</span>
+												);
+											})}
+										</p>
+										<p>
+											Languages:
+											{Object.keys(languages).map(function (key, index) {
+												return (
+													<span className='language__element' key={index}>
+														{languages[key]}
+													</span>
+												);
+											})}
+										</p>
+									</div>
 								</div>
 								<div className='singleCountry__borders'>
 									<p>Border Countries:</p>
-									<span>Netherlands</span>
-									<span>Germany</span>
-									<span>England</span>
+									{borders.map((border, index) => {
+										return <span key={index}>{border}</span>;
+									})}
 								</div>
 							</div>
 						</div>

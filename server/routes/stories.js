@@ -6,9 +6,10 @@ const {
 	updateStory,
 	deleteStory,
 } = require("../controllers/stories");
+const upload = require("../middlewares/image");
 const router = express.Router();
 
-router.post("/story", createStory);
+router.post("/story", upload.single("photo"), createStory);
 router.get("/story", getStories);
 router.get("/story/:id", getSingleStory);
 router.put("/story/:id", updateStory);

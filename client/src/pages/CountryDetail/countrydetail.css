@@ -30,7 +30,38 @@
 	padding: 10px;
 	align-items: center;
 	background-color: hsl(209, 23%, 22%);
+	margin-right: 10px;
+	display: inline-block;
+	width: 15%;
+	text-align: center;
+	margin-top: 15px;
 }
 .language__element {
 	margin: 0px 5px;
+}
+@media screen and (min-width: 767px) {
+	.countryDetail__container {
+		height: 100vh;
+	}
+	.singleCountry__detail {
+		display: flex;
+		justify-content: space-between;
+	}
+	.singleCountry__detail img {
+		display: block;
+	}
+	.singleCountry__detail .singleCountry__detailContainer,
+	.singleCountry__detail img {
+		flex: 1;
+		gap: 30px;
+	}
+	.singleCountry__detail img {
+		height: 400px;
+		width: 150px;
+		margin-right: 30px;
+	}
+	.singleDetail__parent {
+		display: flex;
+		justify-content: space-between;
+	}
 }

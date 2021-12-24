@@ -2,11 +2,12 @@ const db = require("../db/db");
 
 const createStory = async (req, res) => {
 	const { location, story, cost, first_name, last_name, title } = req.body;
+	const { filename } = req.file;
 
 	try {
 		const { rows } = await db.query(
-			"INSERT INTO stories(location, story, cost, first_name, last_name, title) VALUES($1, $2, $3, $4, $5, $6) RETURNING * ",
-			[location, story, cost, first_name, last_name, title]
+			"INSERT INTO stories(location, story, cost, first_name, last_name, title,images) VALUES($1, $2, $3, $4, $5, $6, $7) RETURNING * ",
+			[location, story, cost, first_name, last_name, title, filename]
 		);
 		res.status(200).json({ message: "Story Created", rows });
 	} catch (error) {
@@ -40,10 +41,11 @@ const updateStory = async (req, res) => {
 	const id = req.params.id;
 	const { location, cost, places, story, first_name, last_name, title } =
 		req.body;
+	const { filename } = req.file;
 	try {
 		const { rows } = await db.query(
-			"UPDATE stories SET location = $1, cost = $2, story = $3, first_name= $4, last_name= $5, title=$6 WHERE id = $7 RETURNING *",
-			[location, cost, story, first_name, last_name, title, id]
+			"UPDATE stories SET location = $1, cost = $2, story = $3, first_name= $4, last_name= $5, title=$6, images=$7 WHERE id = $8 RETURNING *",
+			[location, cost, story, first_name, last_name, title, filename, id]
 		);
 		res.status(200).json({ message: "Story Updated", rows });
 	} catch (error) {

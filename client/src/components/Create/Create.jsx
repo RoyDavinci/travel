@@ -11,6 +11,7 @@ const initialState = {
 	cost: "",
 	story: "",
 	title: "",
+	images: "",
 };
 
 const Create = () => {
@@ -28,6 +29,7 @@ const Create = () => {
 
 	const handleSubmit = async (event) => {
 		event.preventDefault();
+		console.log(input);
 		const { data } = await axios.post("http://localhost:4300/api/v1/story", {
 			location: input.location,
 			cost: input.cost,
@@ -35,6 +37,7 @@ const Create = () => {
 			first_name: input.first_name,
 			last_name: input.last_name,
 			title: input.title,
+			images: input.images,
 		});
 		setInput(initialState);
 		console.log(data);
@@ -49,6 +52,7 @@ const Create = () => {
 				action='/create'
 				className='form-horizontal'
 				onSubmit={handleSubmit}
+				encType='multipart/form-data'
 			>
 				<h3>Create Your Own Story</h3>
 				<input
@@ -77,6 +81,12 @@ const Create = () => {
 					name='location'
 					value={input.location}
 					placeholder='Location'
+					onChange={handleInput}
+				/>
+				<input
+					type='file'
+					name='photo'
+					value={input.images}
 					onChange={handleInput}
 				/>
 

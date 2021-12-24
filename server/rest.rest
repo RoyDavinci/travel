@@ -1,0 +1,8 @@
+POST
+http://localhost:4300/api/v3/create
+
+{
+    "username":"davincicode",
+    "password":"davincicode",
+    "email":"davinci@gmail.com"
+}
